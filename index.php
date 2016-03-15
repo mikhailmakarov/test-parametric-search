@@ -124,9 +124,9 @@ while(!$mysqli->error and $temp = $query->fetch_object()) {
 						<?=$params['brand']->items[(int)$item->brand]->name?> <?=$item->model?> <?=$params['color']->items[(int)$item->color]->name?>
 					</div>
 					<div class="goods__item-description">
-						<?=$item->price?> Руб., 
+						<?=$item->price?> Руб. 
 						<?foreach($params as $key => $param):?>
-							<?=($key != 'brand') ? $param->items[$item->$key]->name : ''?>
+							<?=($key != 'brand') ? ', '.$param->items[$item->$key]->name : ''?>
 						<?endforeach;?>
 					</div>
 				</li>
